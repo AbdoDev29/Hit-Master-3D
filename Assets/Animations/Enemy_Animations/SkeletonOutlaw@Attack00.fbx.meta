@@ -509,7 +509,7 @@ ModelImporter:
     second: BoneJaw
   - first:
       74: 7400000
-    second: SkeletonOutlaw@Attack00
+    second: Attack_1
   - first:
       95: 9500000
     second: //RootNode
@@ -582,7 +582,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: SkeletonOutlaw@Attack00
+      name: Attack_1
       takeName: Default Take
       internalID: 0
       firstFrame: 0
