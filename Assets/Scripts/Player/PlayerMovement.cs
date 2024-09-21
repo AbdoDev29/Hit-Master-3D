@@ -31,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
         knifeThrow = FindObjectOfType<KnifeThrow>();
         agent = GetComponent<NavMeshAgent>();
         playerLookAtEnemies = FindObjectOfType<PlayerLookAtEnemies>();
+        
     }
 
     private void Start()
@@ -61,8 +62,9 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-        anim.SetBool("Attack", true);
-         knifeThrow.ThrowKnife();
+           anim.SetBool("Attack", true);
+           knifeThrow.ThrowKnife();
+           
         }
         else
         {
