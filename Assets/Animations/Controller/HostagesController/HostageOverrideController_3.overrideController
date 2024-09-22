@@ -8,4 +8,12 @@ AnimatorOverrideController:
   m_PrefabAsset: {fileID: 0}
   m_Name: HostageOverrideController_3
   m_Controller: {fileID: 9100000, guid: 107e5b57d0b70b74dbaa2fc57f15c6b8, type: 2}
-  m_Clips: []
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 19b555b930185384981ace17d0fef203, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 295e81d07b1a6d64a8252ddafaedb8b4, type: 2}
+  - m_OriginalClip: {fileID: -203655887218126122, guid: dc92434b1f995a447b6efc44a2f6a8a8,
+      type: 3}
+    m_OverrideClip: {fileID: -203655887218126122, guid: cde0a9921eaa9294d9b6412d1c31f50e,
+      type: 3}
+  - m_OriginalClip: {fileID: 7400000, guid: d00cdfa24148d014dbed6aad0445d251, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: d00cdfa24148d014dbed6aad0445d251, type: 2}
