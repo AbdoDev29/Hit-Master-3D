@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Knife
   - Enemy
+  - Strong
+  - Weak
   layers:
   - Default
   - TransparentFX
