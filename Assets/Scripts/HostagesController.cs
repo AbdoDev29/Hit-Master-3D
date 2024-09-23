@@ -7,26 +7,31 @@ public class HostagesController : MonoBehaviour
 {
     PlayerMovement playerMovement;
     Animator anim;
-
-    //public Transform player;
-    //[SerializeField] float distanceAmount = 25f;
-
+    UIController uiController;
+ 
     private void Awake()
     {
         playerMovement = FindObjectOfType<PlayerMovement>();
         anim = GetComponent<Animator>();
+        uiController = FindObjectOfType<UIController>();
     }
     private void Update()
     {
         if (!playerMovement.isTargetChanged)
         {
-            anim.SetBool("Waving", true);
+            anim.SetBool("Dance", true);
+           
         }
         else if(playerMovement.isTargetChanged)
         {
-            anim.SetBool("Dance", true);
+            anim.SetBool("Dance", false);
         }
-        //float distance = Vector3.Distance(transform.position,pl)
-        //if()
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == ("Knife"))
+            // destroy the hostage to test
+          uiController.Failed();
     }
 }

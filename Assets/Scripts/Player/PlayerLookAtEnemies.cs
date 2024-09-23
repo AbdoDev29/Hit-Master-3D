@@ -51,18 +51,15 @@ public class PlayerLookAtEnemies : MonoBehaviour
         return closestEnemy;
     }
 
-    private void MoveToAnotherEnemy()
-    {
-        
-    }
 
-    // استدعاء هذه الدالة عند موت العدو لإزالته من القائمة
+
+    // Call this function when an enemy dies to remove them from the list.
     public void OnEnemyDeath(Transform enemy)
     {
-        //if (enemies.Contains(enemy))
-        //{
-        //    enemies.Remove(enemy); // إزالة العدو من القائمة عند موته
-        //}
+        if (enemies.Contains(enemy))
+        {
+            enemies.Remove(enemy);
+        }
     }
 }
 

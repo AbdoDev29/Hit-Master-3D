@@ -12,6 +12,8 @@ public class EnemyManager : MonoBehaviour
     private Animator anim;
     public Transform player;
     private EnemyHealth enemyHealth;
+    PlayerLookAtEnemies playerLookAtEnemies;
+    UIController uiController;
     // Variables
     [SerializeField] private float rotationSpeed = 5f;
     [SerializeField] private float stoppingDistance = 5.36f;
@@ -21,6 +23,8 @@ public class EnemyManager : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
         enemyHealth = GetComponent<EnemyHealth>();
+        playerLookAtEnemies = FindObjectOfType<PlayerLookAtEnemies>();
+        uiController = FindObjectOfType<UIController>();
     }
 
     private void Update()
@@ -41,14 +45,15 @@ public class EnemyManager : MonoBehaviour
                 Debug.Log("The enemy is clothest to player");
                 anim.SetInteger("Walk", 0);
                 anim.SetBool("Attack", true);
-          
+                uiController.Failed();
             }
 
         }
             if (enemyHealth.isEnemyDead)
             {
-                Destroy(this.gameObject);
-                // animation
+                anim.SetBool("Dead", true);
+                Destroy(this.gameObject, 1.5f);
+                playerLookAtEnemies.OnEnemyDeath(this.gameObject.transform);
             }
 
     }
