@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
     NavMeshAgent agent;
     public Transform[] targets;
     private int currentTargetIndex = 0;
-    private bool isTargetChanged = true;
+    public bool isTargetChanged = true;
 
     
 
