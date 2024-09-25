@@ -45,7 +45,7 @@ public class EnemyManager : MonoBehaviour
                 Debug.Log("The enemy is clothest to player");
                 anim.SetInteger("Walk", 0);
                 anim.SetBool("Attack", true);
-                uiController.Failed();
+                
             }
 
         }
@@ -66,6 +66,14 @@ public class EnemyManager : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            uiController.Failed();
+        }
+            
+    }
     private void LookAtPlayer()
     {
 

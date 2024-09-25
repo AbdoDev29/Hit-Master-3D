@@ -28,10 +28,14 @@ public class HostagesController : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+ 
+    private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == ("Knife"))
-            // destroy the hostage to test
-          uiController.Failed();
+        if (other.gameObject.tag == "Knife")
+        {
+            Debug.Log("You alredy kiled the hostage");
+            Destroy(this.gameObject);
+            uiController.Failed();
+        }
     }
 }
