@@ -7,7 +7,6 @@ public class UIController : MonoBehaviour
 {
     // References
     PlayerLookAtEnemies playerLookAtEnemies;
-    AudioManager audioManager;
 
     public GameObject winPanel;
     public GameObject failedPanel;

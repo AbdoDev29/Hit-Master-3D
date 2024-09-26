@@ -40,23 +40,28 @@ public class EnemyManager : MonoBehaviour
                 LookAtPlayer();
             }
 
-            if(distance < stoppingDistance)
-            {
-                Debug.Log("The enemy is clothest to player");
-                anim.SetInteger("Walk", 0);
-                anim.SetBool("Attack", true);
-                
-            }
+            //if(distance < stoppingDistance)
+            //{
+            //    Debug.Log("The enemy is clothest to player");
+            //    anim.SetInteger("Walk", 0);
+            //    anim.SetBool("Attack", true);
+            //    uiController.Failed();
+            //}
+            //Debug.Log("Sistance: " + distance);
 
         }
-            if (enemyHealth.isEnemyDead)
-            {
-                anim.SetBool("Dead", true);
-                Destroy(this.gameObject, 1.5f);
-                playerLookAtEnemies.OnEnemyDeath(this.gameObject.transform);
-            }
+
+       if (enemyHealth.isEnemyDead)
+        {
+            anim.SetBool("Dead", true);
+            Destroy(this.gameObject, 1.5f);
+            playerLookAtEnemies.OnEnemyDeath(this.gameObject.transform);
+        }
+
+       
 
     }
+     
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Knife")
@@ -66,14 +71,7 @@ public class EnemyManager : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            uiController.Failed();
-        }
-            
-    }
+
     private void LookAtPlayer()
     {
 

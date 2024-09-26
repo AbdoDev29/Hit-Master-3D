@@ -5,7 +5,7 @@ public class PlayerLookAtEnemies : MonoBehaviour
 {
     public List<Transform> enemies;
     public float rotationSpeed = 5f; 
-    private Transform currentTarget;
+    public Transform currentTarget;
     public float closestDistance;
     void Update()
     {
