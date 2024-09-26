@@ -9,17 +9,16 @@ public class KnifeThrow : MonoBehaviour
     [SerializeField] float knifeSpeed = 15f;
     [SerializeField] float delayBetweenKnife = 0.5f;
     public GameObject knife;
-    AudioManager audioManager;
+   
 
-    private void Awake()
-    {
-        audioManager=FindObjectOfType<AudioManager>();
-    }
+
     private void Start()
     {
       knife = Instantiate(knifePrefab,Vector3.zero, Quaternion.Euler(-173.163f, 152.009f, -1.610992f),knifeSpawnPoint);
       knife.transform.localPosition = Vector3.zero;
     }
+
+
 
     public void ThrowKnife()
     {
@@ -39,7 +38,7 @@ public class KnifeThrow : MonoBehaviour
                 knife.GetComponent<Rigidbody>().velocity = direction * knifeSpeed * Time.deltaTime;
                 knife.transform.SetParent(null);
             }
-            audioManager.PlaySound("ThrowingKnife");
+           
 
         }
     }

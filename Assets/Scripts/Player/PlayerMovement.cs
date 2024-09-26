@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     KnifeThrow knifeThrow;
     Animator anim;
     PlayerLookAtEnemies playerLookAtEnemies;
-    
+    AudioManager audioManager;
 
     [SerializeField] float speedMov = 5f;
     [SerializeField] float distanceAmount = 25f;
@@ -31,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
         knifeThrow = FindObjectOfType<KnifeThrow>();
         agent = GetComponent<NavMeshAgent>();
         playerLookAtEnemies = FindObjectOfType<PlayerLookAtEnemies>();
-        
+        audioManager = FindObjectOfType<AudioManager>();
     }
 
     private void Start()
@@ -64,7 +64,7 @@ public class PlayerMovement : MonoBehaviour
         {
            anim.SetBool("Attack", true);
            knifeThrow.ThrowKnife();
-           
+           audioManager.PlaySound("ThrowingKnife");
         }
         else
         {

@@ -5,7 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class UIController : MonoBehaviour
 {
+    // References
     PlayerLookAtEnemies playerLookAtEnemies;
+    AudioManager audioManager;
 
     public GameObject winPanel;
     public GameObject failedPanel;
@@ -13,6 +15,7 @@ public class UIController : MonoBehaviour
     private void Awake()
     {
         playerLookAtEnemies=FindObjectOfType<PlayerLookAtEnemies>();
+        audioManager = FindObjectOfType<AudioManager>();
     }
 
     private void Start()
@@ -30,12 +33,14 @@ public class UIController : MonoBehaviour
         if (playerLookAtEnemies.enemies.Count == 0)
         {
             winPanel.SetActive(true);
+          //  audioManager.PlaySound("Winning");
         }
     }
 
     public void Failed() 
     {
         failedPanel.SetActive(true);
+       // audioManager.PlaySound("Failling");
     }
 
     public void Restart()

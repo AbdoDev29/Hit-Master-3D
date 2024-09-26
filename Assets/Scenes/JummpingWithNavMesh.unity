@@ -1075,7 +1075,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 5.845294, y: 6.1116257, z: 1}
   m_Center: {x: -0.32189035, y: 2.5558128, z: 2.88}
@@ -2459,7 +2459,6 @@ GameObject:
   m_Component:
   - component: {fileID: 606708059}
   - component: {fileID: 606708058}
-  - component: {fileID: 606708057}
   - component: {fileID: 606708060}
   m_Layer: 0
   m_Name: Main Camera
@@ -2468,14 +2467,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &606708057
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 606708056}
-  m_Enabled: 1
 --- !u!20 &606708058
 Camera:
   m_ObjectHideFlags: 0
@@ -4898,6 +4889,8 @@ GameObject:
   - component: {fileID: 1192635603}
   - component: {fileID: 1192635604}
   - component: {fileID: 1192635605}
+  - component: {fileID: 1192635606}
+  - component: {fileID: 1192635608}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -4965,6 +4958,42 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   winPanel: {fileID: 1545611616}
   failedPanel: {fileID: 1324332855}
+--- !u!114 &1192635606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1192635601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 394cfc9865e7f9c45a967d25a69ec912, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - clip: {fileID: 8300000, guid: 3536f1a2ec65b124fbad8b762a9c37b1, type: 3}
+    source: {fileID: 0}
+    volume: 1
+    loop: 0
+    name: ThrowingKnife
+  - clip: {fileID: 8300000, guid: 777fe6165963f5e4aabdd447ae50be42, type: 3}
+    source: {fileID: 0}
+    volume: 1
+    loop: 0
+    name: Winning
+  - clip: {fileID: 8300000, guid: a4b745edc8f081545b8eadab3e46084b, type: 3}
+    source: {fileID: 0}
+    volume: 1
+    loop: 0
+    name: Failling
+--- !u!81 &1192635608
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1192635601}
+  m_Enabled: 1
 --- !u!1001 &1195608053
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10714,10 +10743,10 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 1192635602}
   - {fileID: 1475394889}
   - {fileID: 1069586910}
   - {fileID: 871236082}
-  - {fileID: 1192635602}
   - {fileID: 192644908}
   - {fileID: 1619120267}
   - {fileID: 132997054}
