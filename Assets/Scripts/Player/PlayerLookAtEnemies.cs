@@ -11,7 +11,8 @@ public class PlayerLookAtEnemies : MonoBehaviour
     {
         if (enemies.Count > 0)
         {
-            currentTarget = GetClosestEnemy();
+            if(enemies!=null)
+              currentTarget = GetClosestEnemy();
           
             if (currentTarget != null)
             {

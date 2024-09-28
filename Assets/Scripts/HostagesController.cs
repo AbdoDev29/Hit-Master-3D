@@ -20,11 +20,12 @@ public class HostagesController : MonoBehaviour
         if (!playerMovement.isTargetChanged)
         {
             anim.SetBool("Dance", true);
-           
+            GetComponent<CapsuleCollider>().enabled = false;
         }
         else if(playerMovement.isTargetChanged)
         {
             anim.SetBool("Dance", false);
+            GetComponent<CapsuleCollider>().enabled = true;
         }
     }
 

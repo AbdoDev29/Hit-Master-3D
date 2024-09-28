@@ -10,11 +10,10 @@ public class EnemyHealth : MonoBehaviour
     private void Start()
     {
         currentHealth = maxHealth;
-        Debug.Log("Health: " + currentHealth);
+        
     }
     public void DecreaseHealth(int damage)
     {
-        Debug.Log("Health: " + currentHealth);
         currentHealth -= damage;
         if(currentHealth == 0)
         {

@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     PlayerLookAtEnemies playerLookAtEnemies;
     UIController uiController;
     Animator anim;
-    public Transform player;
+    //public Transform player;
 
     private void Awake()
     {
@@ -18,19 +18,24 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        EnemyAttack();
+       
+             EnemyAttack();
+       
     }
     public void EnemyAttack()
     {
-        float distance = Vector3.Distance(playerLookAtEnemies.currentTarget.position, player.position);
-        Debug.Log("Distance: " + distance);
-        if(distance < 7f)
-        {
-            Debug.Log("The enemy is clothest to player");
-            anim.SetInteger("Walk", 0);
-            anim.SetBool("Attack", true);
-            uiController.Failed();
-        }
+       
+            float distance = Vector3.Distance(playerLookAtEnemies.currentTarget.position, transform.position);
+           
+            if(distance < 7f)
+            {
+                Debug.Log("The enemy is clothest to player");
+                anim.SetInteger("Walk", 0);
+                anim.SetBool("Attack", true);
+                uiController.Failed();
+            }
+
+        
     }
 
 }
